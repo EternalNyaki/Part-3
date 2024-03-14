@@ -6,7 +6,8 @@ public enum ChestType
 {
     Villager,
     Merchant,
-    Archer
+    Archer,
+    Thief
 }
 
 public class Chest : MonoBehaviour
