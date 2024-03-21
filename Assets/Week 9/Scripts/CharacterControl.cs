@@ -8,6 +8,8 @@ public class CharacterControl : MonoBehaviour
 {
     public TextMeshProUGUI villagerTypeText;
 
+    public List<Villager> villagerList;
+
     public static Villager SelectedVillager { get; private set; }
 
     private void Update()
@@ -32,4 +34,8 @@ public class CharacterControl : MonoBehaviour
         SelectedVillager.Selected(true);
     }
     
+    public void SelectVillager(int index)
+    {
+        SetSelectedVillager(villagerList[index]);
+    }
 }
