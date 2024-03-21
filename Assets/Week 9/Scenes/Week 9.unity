@@ -6466,7 +6466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 6545997943602628296}
-  dashDistance: 2
   daggerPrefab: {fileID: 3871564979539789689, guid: 1a029d589283c354c8953e09188a499e, type: 3}
   spawnPoint1: {fileID: 101518098}
   spawnPoint2: {fileID: 1934167406}
