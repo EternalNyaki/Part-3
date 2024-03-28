@@ -729,7 +729,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 490625649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2142140346}
+        m_TargetAssemblyTypeName: FlightControl, Assembly-CSharp
+        m_MethodName: MoveForwards
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &490625649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1151,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1128249440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2142140346}
+        m_TargetAssemblyTypeName: FlightControl, Assembly-CSharp
+        m_MethodName: MakeTurn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -90
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1128249440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1305,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1552451284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2142140346}
+        m_TargetAssemblyTypeName: FlightControl, Assembly-CSharp
+        m_MethodName: MakeTurn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 45
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1552451284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,7 +1459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1693512202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2142140346}
+        m_TargetAssemblyTypeName: FlightControl, Assembly-CSharp
+        m_MethodName: MakeTurn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -45
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1693512202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1881,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2137206355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2142140346}
+        m_TargetAssemblyTypeName: FlightControl, Assembly-CSharp
+        m_MethodName: MakeTurn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 90
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2137206355
 MonoBehaviour:
   m_ObjectHideFlags: 0
