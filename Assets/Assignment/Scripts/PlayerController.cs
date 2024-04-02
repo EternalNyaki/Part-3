@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
 
     private float input;
-
+    
+    private Animator animator;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -26,5 +28,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         input = Input.GetAxis("Horizontal");
+
+        if(-input * transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
+
+        animator.SetFloat("movement", Mathf.Abs(input));
     }
 }
