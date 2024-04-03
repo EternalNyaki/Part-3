@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,10 @@ public class PlayerController : DestructibleObject
     public GameObject spellPrefab;
 
     public Slider healthBar;
+
+    private static int score = 0;
+
+    public TextMeshProUGUI scoreText;
 
     private float input;
 
@@ -64,6 +69,8 @@ public class PlayerController : DestructibleObject
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = "Score: " + score.ToString();
+
         if (!disableMovement)
         {
             input = Input.GetAxis("Horizontal");
@@ -169,6 +176,11 @@ public class PlayerController : DestructibleObject
     {
         StopAllCoroutines();
         StartCoroutine(Death());
+    }
+
+    public static void increaseScore()
+    {
+        score++;
     }
 
 #if UNITY_EDITOR

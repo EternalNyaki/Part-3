@@ -147,6 +147,7 @@ public class EnemyCombat : DestructibleObject
 
     private IEnumerator Death()
     {
+        PlayerController.increaseScore();
         animator.SetTrigger("die");
         disableMovement = true;
         yield return new WaitForSeconds(deathDuration);

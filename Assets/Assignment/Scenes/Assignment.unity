@@ -2653,6 +2653,7 @@ MonoBehaviour:
   spellRange: 6
   spellPrefab: {fileID: 4236820378805896534, guid: f3c43b2479dce1245aadf43153fdc94b, type: 3}
   healthBar: {fileID: 208038356}
+  scoreText: {fileID: 1840611274}
   debugAttackFrame: 4
 --- !u!70 &1784604080
 CapsuleCollider2D:
