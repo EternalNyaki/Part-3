@@ -13,6 +13,8 @@ public class EnemyCombat : DestructibleObject
 
     public Transform target;
 
+    public Hitbox detectionBox;
+
     public int attackDamage = 10;
     public LayerMask attackLayerMask;
 
@@ -48,11 +50,18 @@ public class EnemyCombat : DestructibleObject
     // Update is called once per frame
     void Update()
     {
+        if(target == null) disableMovement = true;
+
         if (!disableMovement)
         {
             if((target.position.x - transform.position.x) * transform.localScale.x < 0)
             {
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            }
+
+            if (Physics2D.OverlapBox((Vector2)transform.position + detectionBox.point * transform.localScale.x, detectionBox.size, 0f, attackLayerMask) != null)
+            {
+                interruptAction = StartCoroutine(Attack());
             }
         }
 
@@ -146,7 +155,7 @@ public class EnemyCombat : DestructibleObject
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (!dead)
+        if(!dead)
         {
             if (interruptAction != null) StopCoroutine(interruptAction);
             interruptAction = StartCoroutine(Hurt());
@@ -160,8 +169,13 @@ public class EnemyCombat : DestructibleObject
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.green;
+        Gizmos.matrix = transform.localToWorldMatrix;
+
+        Gizmos.DrawWireCube(detectionBox.point, detectionBox.size);
+
         Hitbox hitbox;
         switch (debugAttack)
         {

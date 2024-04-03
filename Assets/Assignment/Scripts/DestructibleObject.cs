@@ -23,12 +23,15 @@ public class DestructibleObject : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        Debug.Log("Health: " + currentHealth.ToString());
-        if (currentHealth <= 0)
+        if(!dead)
         {
-            Die();
-            dead = true;
+            currentHealth -= damage;
+            Debug.Log("Health: " + currentHealth.ToString());
+            if (currentHealth <= 0)
+            {
+                Die();
+                dead = true;
+            }
         }
     }
 

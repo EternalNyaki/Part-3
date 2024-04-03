@@ -168,7 +168,7 @@ public class PlayerController : DestructibleObject
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Hitbox hitbox = attackHitboxes[debugAttackFrame];
         Gizmos.color = Color.red;
