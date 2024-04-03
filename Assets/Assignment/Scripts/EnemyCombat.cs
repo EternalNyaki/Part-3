@@ -11,7 +11,7 @@ public class EnemyCombat : DestructibleObject
     public float hitStun = 1.5f;
     public float deathDuration = 0.6f;
 
-    public Transform target;
+    private Transform target;
 
     public Hitbox detectionBox;
 
@@ -39,6 +39,7 @@ public class EnemyCombat : DestructibleObject
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindWithTag("Player").transform;
     }
 
     private void FixedUpdate()

@@ -123,7 +123,7 @@ public class PlayerController : DestructibleObject
         Collider2D collider = Physics2D.OverlapBox(new Vector2(transform.position.x + (spellRange / 2 * -transform.localScale.x), transform.position.y - 0.3f), new Vector2(spellRange, 1f), 0, attackLayerMask);
         if(collider != null)
         {
-            Instantiate(spellPrefab, new Vector3(collider.transform.position.x, transform.position.y + 0.4f), Quaternion.identity);
+            Instantiate(spellPrefab, new Vector3(collider.transform.position.x, collider.transform.position.y + 0.6f), Quaternion.identity);
         }
         else
         {

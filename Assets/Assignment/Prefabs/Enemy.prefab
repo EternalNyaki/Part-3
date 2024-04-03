@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4236820378805896534
+--- !u!1 &395042488438916764
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4958011492930610081}
-  - component: {fileID: 9175182427768817479}
-  - component: {fileID: 8881649213803422661}
-  - component: {fileID: 8192847875497876978}
-  m_Layer: 0
-  m_Name: Void Hand
+  - component: {fileID: 6946864878756641888}
+  - component: {fileID: 5080224656406628674}
+  - component: {fileID: 667556211804901794}
+  - component: {fileID: 4239400282315368537}
+  - component: {fileID: 7230636537144499510}
+  - component: {fileID: 7615929469103214863}
+  m_Layer: 7
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4958011492930610081
+--- !u!4 &6946864878756641888
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236820378805896534}
+  m_GameObject: {fileID: 395042488438916764}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.86, y: -1.12, z: 0}
+  m_LocalPosition: {x: -6.45, y: -3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9175182427768817479
+--- !u!212 &5080224656406628674
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236820378805896534}
+  m_GameObject: {fileID: 395042488438916764}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,29 +76,29 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 29702762353113097, guid: 1914d95466e3d4341a618c35a56d5f82, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.375, y: 2.90625}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8881649213803422661
+--- !u!95 &667556211804901794
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236820378805896534}
+  m_GameObject: {fileID: 395042488438916764}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4135298a614a734ca781e57e98c027b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 17cfe11019a43c9408b17673e2a65520, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,24 +109,95 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8192847875497876978
+--- !u!50 &4239400282315368537
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395042488438916764}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &7230636537144499510
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395042488438916764}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2, y: 0}
+  m_Size: {x: 0.8, y: 1.6}
+  m_Direction: 0
+--- !u!114 &7615929469103214863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236820378805896534}
+  m_GameObject: {fileID: 395042488438916764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88e22467b3a9ae445bd4b0fa73964623, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f325cc6287ee246891d80461fe157f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1.6
-  damage: 10
-  layerMask:
+  maxHealth: 100
+  speed: 3
+  attackDuration: 0.8
+  attack2Duration: 0.8
+  hitStun: 1
+  deathDuration: 0.6
+  detectionBox:
+    point: {x: 1, y: 0}
+    size: {x: 2, y: 2}
+    angle: 0
+  attackDamage: 5
+  attackLayerMask:
     serializedVersion: 2
-    m_Bits: 128
-  hitboxes:
+    m_Bits: 64
+  attack1Hitboxes:
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
     angle: 0
@@ -143,23 +216,18 @@ MonoBehaviour:
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
     angle: 0
+  - point: {x: 1.2, y: 0.2}
+    size: {x: 2, y: 1.5}
+    angle: 0
+  - point: {x: 0.9, y: -0.3}
+    size: {x: 1.7, y: 0.5}
+    angle: 0
+  attack2Hitboxes:
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
     angle: 0
-  - point: {x: -0.2, y: -0.5}
-    size: {x: 0.8, y: 2}
-    angle: 0
-  - point: {x: -0.2, y: -0.5}
-    size: {x: 0.8, y: 2}
-    angle: 0
-  - point: {x: -0.2, y: -0.5}
-    size: {x: 1, y: 2}
-    angle: 0
-  - point: {x: -0.3, y: -1.2}
-    size: {x: 0.7, y: 0.5}
-    angle: 0
-  - point: {x: -0.3, y: -1.2}
-    size: {x: 0.7, y: 0.5}
+  - point: {x: 0, y: 0}
+    size: {x: 0, y: 0}
     angle: 0
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
@@ -173,4 +241,11 @@ MonoBehaviour:
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
     angle: 0
-  debugAttackFrame: 0
+  - point: {x: 1.1, y: 0.7}
+    size: {x: 2.2, y: 2.4}
+    angle: 0
+  - point: {x: 0.5, y: 1.4}
+    size: {x: 2, y: 1}
+    angle: 0
+  debugAttack: 0
+  debugAttackFrame: 6

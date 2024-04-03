@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DestructibleObject : MonoBehaviour
 {
     public int maxHealth = 100;
 
-    protected int currentHealth;
+    [DoNotSerialize] public int currentHealth { get; protected set; }
     protected bool dead;
 
     // Start is called before the first frame update
