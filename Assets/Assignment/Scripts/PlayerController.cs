@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class Hitbox
@@ -31,6 +30,8 @@ public class PlayerController : DestructibleObject
     public float spellRange = 3f;
     public GameObject spellPrefab;
 
+    public Slider healthBar;
+
     private float input;
 
     private bool disableMovement = false;
@@ -48,6 +49,8 @@ public class PlayerController : DestructibleObject
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        healthBar.value = (float)currentHealth / maxHealth;
     }
 
     private void FixedUpdate()
@@ -154,6 +157,7 @@ public class PlayerController : DestructibleObject
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        healthBar.value = (float)currentHealth / maxHealth;
         if(!dead)
         {
             if(interruptAction != null) StopCoroutine(interruptAction);
