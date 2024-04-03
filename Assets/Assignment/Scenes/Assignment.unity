@@ -1699,11 +1699,11 @@ MonoBehaviour:
   attack2Duration: 0.8
   hitStun: 1.5
   deathDuration: 0.6
-  target: {fileID: 0}
+  target: {fileID: 1784604078}
   attackDamage: 10
   attackLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attack1Hitboxes:
   - point: {x: 0, y: 0}
     size: {x: 0, y: 0}
