@@ -7,32 +7,32 @@ public class DestructibleObject : MonoBehaviour
     public int maxHealth = 100;
 
     protected int currentHealth;
+    protected bool dead;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        Initialize();
     }
 
-    private void Update()
+    protected virtual void Initialize()
     {
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            TakeDamage(10);
-        }
+
     }
 
     public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Health: " + currentHealth.ToString());
+        //Debug.Log("Health: " + currentHealth.ToString());
         if (currentHealth <= 0)
         {
             Die();
+            dead = true;
         }
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
         Debug.Log("Bleh");
         Destroy(gameObject);
