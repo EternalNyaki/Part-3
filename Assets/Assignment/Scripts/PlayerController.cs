@@ -18,6 +18,7 @@ public class PlayerController : DestructibleObject
     public float speed = 5f;
 
     public float attackDuration = 1f;
+    public float castDuration = 0.9f;
     public float hitStun = 0.3f;
     public float deathDuration = 1f;
 
@@ -25,6 +26,10 @@ public class PlayerController : DestructibleObject
     public LayerMask attackLayerMask;
 
     public Hitbox[] attackHitboxes;
+
+    public float castDelay = 0.5f;
+    public float spellRange = 3f;
+    public GameObject spellPrefab;
 
     private float input;
 
@@ -69,6 +74,10 @@ public class PlayerController : DestructibleObject
             {
                 interruptAction = StartCoroutine(Attack());
             }
+            if(Input.GetKeyDown(KeyCode.K))
+            {
+                interruptAction = StartCoroutine(Cast());
+            }
 
             animator.SetFloat("movement", Mathf.Abs(input));
         }
@@ -87,8 +96,7 @@ public class PlayerController : DestructibleObject
         while(timer < attackDuration)
         {
             int index = (int)(timer / attackDuration * attackHitboxes.Length);
-            Collider2D[] collisions = Physics2D.OverlapBoxAll((Vector2)transform.position + attackHitboxes[index].point, attackHitboxes[index].size, attackHitboxes[index].angle, attackLayerMask);
-            //Collder2D[] collisions = Physics2D.OverlapBoxAll((Vector2)(transform.position + transform.forward * 2), new Vector2(5, 5), 0f);
+            Collider2D[] collisions = Physics2D.OverlapBoxAll((Vector2)transform.position + attackHitboxes[index].point * transform.localScale.x, attackHitboxes[index].size, attackHitboxes[index].angle, attackLayerMask);
             foreach(Collider2D collision in collisions)
             {
                 if(!objectsHit.Contains(collision.gameObject))
@@ -101,6 +109,24 @@ public class PlayerController : DestructibleObject
             timer += Time.deltaTime;
             yield return null;
         }
+        disableMovement = false;
+    }
+
+    private IEnumerator Cast()
+    {
+        animator.SetTrigger("cast");
+        disableMovement = true;
+        yield return new WaitForSeconds(castDelay);
+        Collider2D collider = Physics2D.OverlapBox(new Vector2(transform.position.x + (spellRange / 2 * -transform.localScale.x), transform.position.y - 0.3f), new Vector2(spellRange, 1f), 0, attackLayerMask);
+        if(collider != null)
+        {
+            Instantiate(spellPrefab, new Vector3(collider.transform.position.x, transform.position.y + 0.4f), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(spellPrefab, new Vector3(transform.position.x + (spellRange / 2 * -transform.localScale.x), transform.position.y + 0.4f), Quaternion.identity);
+        }
+        yield return new WaitForSeconds(castDuration - castDelay);
         disableMovement = false;
     }
 
@@ -121,12 +147,7 @@ public class PlayerController : DestructibleObject
     {
         animator.SetTrigger("die");
         disableMovement = true;
-        float timer = 0;
-        while(timer < deathDuration)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(deathDuration);
         Destroy(gameObject);
     }
 
